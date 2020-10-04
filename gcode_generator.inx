@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Gcode</_name>
+  <id>com.skdev.gcode_generator</id>
+
+  <param name="width" type="int" _gui-text="Width (mm): " min="1" max="9999">220</param>
+  <param name="height" type="int" _gui-text="Height (mm): " min="1" max="9999">220</param>
+  <param name="max_speed" type="int" _gui-text="Max speed (mm/s): " min="1" max="9999">400</param>
+  <param name="print_speed" type="int" _gui-text="Print speed (%): " min="1" max="100">40</param>
+  <param name="depth_z" type="float" _gui-text="Depth (mm): " min="0" max="9999">0</param>
+  <param name="print_z" type="float" _gui-text="Print Z (mm): " min="-9999" max="9999">0</param>
+  <param name="travel_z" type="float" _gui-text="Travel Z (mm): " min="-9999" max="9999">10</param>
+  <param name="invert_y" type="boolean" _gui-text="Invert Y:" >false</param>
+  <param name="output" type="string" _gui-text="Gcode output path: " >output.gcode</param>
+  
+  <effect>
+    <object-type>all</object-type>
+    <effects-menu>
+      <submenu _name="Export"/>
+    </effects-menu>
+  </effect>
+
+  <script>
+    <command reldir="extensions" interpreter="python">gcode_generator.py</command>
+  </script>
+</inkscape-extension>
